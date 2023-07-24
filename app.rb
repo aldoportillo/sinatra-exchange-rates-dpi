@@ -24,7 +24,7 @@ get("/:currency_one/:currency_two"){
   @currency_one = params.fetch("currency_one")
   @currency_two = params.fetch("currency_two")
 
-  req = HTTP.get("https://api.exchangerate.host/convert?from=USD&to=INR")
+  req = HTTP.get("https://api.exchangerate.host/convert?from=#{@currency_one}&to=#{@currency_two}")
   @res = JSON.parse(req).fetch("result")
 
   erb(:output)
