@@ -10,3 +10,12 @@ get("/") do
   @currencies = res.keys
   erb(:home)
 end
+
+get("/:currency_one"){
+  @currency = params.fetch("currency_one")
+  req = HTTP.get("https://api.exchangerate.host/symbols")
+  res = JSON.parse(req).fetch("symbols")
+
+  @currencies = res.keys
+  erb(:second_selection)
+}
