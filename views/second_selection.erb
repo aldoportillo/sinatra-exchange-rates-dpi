@@ -1,0 +1,7 @@
+<h1>Convert <%= @currency %></h1>
+<p>Go <a href="/">back</a>.</p>
+<ul>
+  <% @currencies.each do |tick| %>
+   <li><a href="/<%= @currency %>/<%= tick %>">Convert 1 <%= @currency%> to <%=tick%>...</a></li>
+  <% end %>
+</ul>
